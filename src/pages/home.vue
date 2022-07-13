@@ -1,9 +1,9 @@
 
 <template>
-    <h1>这是首页</h1>
-    <TodoList></TodoList>
+    <h1>这是home页</h1>
+    <Home></Home>
 </template>
 
 <script setup>
-import TodoList from '../components/TodoList.vue'
+import Home from '../components/Home.vue'
 </script>

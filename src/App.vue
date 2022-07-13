@@ -7,10 +7,26 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <HelloWorld></HelloWorld>
   <div>
-    <router-link to="/">首页</router-link> |
+    <router-link to="/home">首页</router-link> |
+    <router-link to="/todoList">列表页</router-link> |
     <router-link to="/rate">平分</router-link>
   </div>
-  <router-view></router-view>
+
+  <!-- <router-view v-slot="{ Component }">
+    <transition name="route" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view> -->
+
+  <router-view v-slot="{ Component, route }">
+    <transition name="modal" mode="out-in">
+      <div :key="route.name">
+        <component :is="Component"></component>
+      </div>
+    </transition>
+  </router-view>
+
+  <!-- <router-view></router-view> -->
 </template>
 
 <style>
@@ -21,5 +37,19 @@ import HelloWorld from "./components/HelloWorld.vue";
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.modal-enter-from {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.modal-enter-active {
+  transition: all 0.3s ease;
+}
+.modal-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.modal-leave-active {
+  transition: all 0.3s ease;
 }
 </style>
