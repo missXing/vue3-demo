@@ -9,7 +9,8 @@ import HelloWorld from "./components/HelloWorld.vue";
   <div>
     <router-link to="/home">首页</router-link> |
     <router-link to="/todoList">列表页</router-link> |
-    <router-link to="/rate">平分</router-link>
+    <router-link to="/rate">平分</router-link> |
+    <router-link to="/counter">vuex demo</router-link>
   </div>
 
   <!-- <router-view v-slot="{ Component }">
