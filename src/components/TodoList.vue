@@ -6,7 +6,7 @@
     <input type="text" v-model="title" @keydown.enter="addTodo" />
     
     <button v-if="active < all" @click="clear">清理</button>
-    <div v-if="todos.length">
+    <ul v-if="todos.length">
       <transition-group name="flip-list" tag="ul">
         <li v-for="(todo,i) in todos" :key="todo.title">
           <input type="checkbox" v-model="todo.done" />
@@ -14,7 +14,7 @@
           <span class="remove-btn" @click="removeTodo($event, i)">❌</span>
         </li>
       </transition-group>
-    </div>
+    </ul>
     <div v-else>暂无数据</div>
     <div>
       全选
@@ -162,5 +162,26 @@ function removeTodo(e, i) {
   top: 11px;
   z-index: 100;
   transition: all 0.5s linear;
+}
+</style>
+
+
+<style lang="scss" scoped>
+$padding:10px;
+$white:#fff;
+ul {
+  width:500px;
+  margin:0 auto;
+  padding: 0;
+  li {
+    &:hover {
+      cursor: pointer;
+    }
+    list-style-type: none;
+    margin-bottom: $padding;
+    padding: $padding;
+    background: $white;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 </style>
