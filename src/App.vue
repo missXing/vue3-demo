@@ -10,7 +10,8 @@ import HelloWorld from "./components/HelloWorld.vue";
     <router-link to="/home">首页</router-link> |
     <router-link to="/todoList">列表页</router-link> |
     <router-link to="/rate">平分</router-link> |
-    <router-link to="/counter">vuex demo</router-link>
+    <router-link to="/counter">vuex demo</router-link> |
+    <router-link to="/head">Jsx demo</router-link>
   </div>
 
   <!-- <router-view v-slot="{ Component }">
@@ -27,7 +28,6 @@ import HelloWorld from "./components/HelloWorld.vue";
     </transition>
   </router-view>
 
-  <!-- <router-view></router-view> -->
 </template>
 
 <style>
